@@ -2,6 +2,8 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
+define('TITLE', 'Cadastrar Vaga');
+
 use \App\Entity\Vaga;
 
 //VALIDAÇÃO DE POST
@@ -11,8 +13,11 @@ if (isset($_POST['tTitulo'], $_POST['tDescricao'], $_POST['tStatus'])) {
     $Vaga->titulo    = $_POST['tTitulo'];
     $Vaga->descricao = $_POST['tDescricao'];
     $Vaga->ativo     = $_POST['tStatus'];
+    if($Vaga->cadastrar()){
 
-    echo "<pre>"; print_r($Vaga); echo "</pre>"; exit;
+        $_SESSION['success'] = "Ação concluída";
+        echo "<script>location.href='index.php'</script>";
+    }
 }
 
 

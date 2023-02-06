@@ -11,7 +11,7 @@
     </head>
     <body class="bg-dark text-light">
         
-        <div class="container" style="max-width: 900px;">
+        <div class="container" style="max-width: 900px; padding-bottom: 100px">
             <div class="jumbotron mx-auto text-center" style="background-color: #31AFB4; padding: 40px">
                 <h1>CODX Tech</h1>
                 <p>Exemplo de CRUD com PHP Orientado a Objetos</p>
