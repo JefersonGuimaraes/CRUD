@@ -5,6 +5,12 @@ require __DIR__ . '/vendor/autoload.php';
 define('TITLE', 'Cadastrar Vaga');
 
 use \App\Entity\Vaga;
+use \App\Session\Login;
+
+//OBRIGA O USUÁRIO A ESTAR LOGADO
+Login::requireLogin();
+
+$Vaga = new Vaga;
 
 //VALIDAÇÃO DE POST
 if (isset($_POST['tTitulo'], $_POST['tDescricao'], $_POST['tStatus'])) {
