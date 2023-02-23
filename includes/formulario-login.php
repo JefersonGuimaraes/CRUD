@@ -1,3 +1,7 @@
+<?php
+    $alertaLogin = !empty($alertaLogin) ? "<div class='alert alert-danger'>".$alertaLogin."</div>" : "";
+    $alertaCadastro = !empty($alertaCadastro) ? "<div class='alert alert-danger'>".$alertaCadastro."</div>" : "";
+?>
 <div class="jumbotron text-dark bg-light p-5 mt-5">
 
     <div class="row">
@@ -7,6 +11,7 @@
             <form method="POST">
 
                 <h2>Login</h2>
+                <?=$alertaLogin?>
 
                 <div class="mb-3">
                     <label for="cEmail" class="form-label">E-mail</label>
@@ -32,6 +37,7 @@
         <form method="POST">
 
             <h2>Cadastra-se</h2>
+            <?=$alertaCadastro?>
 
             <div class="mb-3">
                 <label for="cNome" class="form-label">Nome</label>
