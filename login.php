@@ -25,7 +25,8 @@ if(isset($_POST["acao"])){
                 break;
             }
 
-            echo "<pre>"; print_r($obUsuario); echo "</pre>";exit;
+            //LOGA USUÁRIO
+            Login::login($obUsuario);
 
             break;
         
@@ -33,11 +34,21 @@ if(isset($_POST["acao"])){
 
             if(isset($_POST["tNome"], $_POST["tEmail"], $_POST["tSenha"])){
 
+                //BUSCA USUÁRIO POR EMAIL
+                $obUsuario = Usuario::getUsuarioPorEmail($_POST["tEmail"]);
+                if($obUsuario instanceof Usuario){
+                    $alertaCadastro = "O e-mail digitado já está em uso";
+                    break;
+                }
+
+                //NOVO USUÁRIO
                 $obUsuario = new Usuario;
                 $obUsuario->nome = $_POST["tNome"];
                 $obUsuario->email = $_POST["tEmail"];
                 $obUsuario->senha = password_hash($_POST["tSenha"], PASSWORD_DEFAULT);
                 $obUsuario->cadastrar();
+
+                Login::login($obUsuario);
             }
 
             break;

@@ -1,3 +1,13 @@
+<?php
+    use \App\Session\Login;
+
+    //DADOS DO USUÁRIO LOGADO
+    $usuarioLogado = Login::getUsuarioLogado();
+
+    //DETALHES DO USUÁRIO
+    $usuario = $usuarioLogado ? $usuarioLogado["nome"]." <a href='logout.php' class='text-light font-weight-bold ms-2'>Sair</a>" : "Visitante <a href='login.php' class='text-light font-weight-bold ms-2'>Entrar</a>";
+
+?>
 <!doctype html>
 <html lang="pt-br">
     <head>
@@ -15,5 +25,11 @@
             <div class="jumbotron mx-auto text-center" style="background-color: #31AFB4; padding: 40px">
                 <h1>CODX Tech</h1>
                 <p>Exemplo de CRUD com PHP Orientado a Objetos</p>
+
+                <hr class="border-light">
+
+                <div class="d-flex justify-content-start">
+                    <?=$usuario?>
+                </div>
             </div>
 

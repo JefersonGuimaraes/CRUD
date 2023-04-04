@@ -4,7 +4,8 @@ require __DIR__ . '/vendor/autoload.php';
 
 define('TITLE', 'Editar Vaga');
 
-use \App\Entity\Vaga;use \App\Session\Login;
+use \App\Entity\Vaga;
+use \App\Session\Login;
 
 //OBRIGA O USUÁRIO A ESTAR LOGADO
 Login::requireLogin();

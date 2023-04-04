@@ -145,7 +145,6 @@ class Database{
         return true;
     }
 
-
     /**
      * Método responsável por excluir dados do banco de dados
      *
