@@ -5,7 +5,7 @@ require __DIR__ . '/vendor/autoload.php';
 use \App\Session\Login;
 use \App\Entity\Usuario;
 
-//OBRIGA O USUÁRIO A ESTAR NÃO LOGADO
+//OBRIGA O USUÁRIO A NÃO ESTAR LOGADO
 Login::requireLogout();
 
 //MENSAGENS DE ALERTA DOS FORMULÁRIOS
@@ -25,7 +25,8 @@ if(isset($_POST["acao"])){
                 break;
             }
 
-            echo "<pre>"; print_r($obUsuario); echo "</pre>";exit;
+            // LOGA O USUÁRIO
+            Login::login($obUsuario);
 
             break;
         

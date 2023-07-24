@@ -5,11 +5,43 @@ namespace App\Session;
 class Login{
 
     /**
+     * Método responsável por iniciar a sessão
+     */
+    private static function init(){
+        // VERIFICA SE A SESSÃO ESTÁ ATIVA
+        if(session_status() != PHP_SESSION_ACTIVE){
+            session_start();
+        }
+    }
+
+    /**
+     * Método responsável por logar o usuário
+     *
+     * @param Usuario $obUsuariovoid
+     */
+    public static function login($obUsuario){
+        // INICIA A SESSÃO
+        self::init();
+
+        $_SESSION['usuario'] = [
+            'id'    => $obUsuario->id,
+            'nome'  => $obUsuario->nome,
+            'email' => $obUsuario->email
+        ];
+
+        echo "<script> location.href='index.php'</script>";
+    }
+
+    /**
      * Método responsável por verificar se o usuário está logado
      * @return boolean
      */
     public static function isLogged(){
-        return false;
+        // INICIA A SESSÃO
+        self::init();
+
+        // VALIDAÇÃO DA SESSÃO 
+        return isset($_SESSION["usuario"]["id"]);
     }
 
     /**
