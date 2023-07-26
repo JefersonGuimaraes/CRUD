@@ -23,13 +23,13 @@ class Database{
      * Usuário do banco
      * @var string
      */
-    const USER = 'Jeferson';
+    const USER = 'seu_usuario';
 
     /**
      * Senha de acesso ao banco de dados
      * @var string
      */
-    const PASS = 'Jeferson@1214';
+    const PASS = 'sua_senha';
 
     /**
      * Nome da tabela a ser manipulada
