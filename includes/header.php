@@ -3,7 +3,7 @@
 
     
     //DETALHES DO USUÁRIO
-    $usuario = $_SESSION["usuario"] ? "Olá, ".$_SESSION["usuario"]["nome"]." <a href='logout.php' class='text-light font-weight-bold ms-2'>Sair</a>" : "Visitante <a href='login.php' class='text-light font-weight-bold ms-2'>Entrar</a>";
+    $usuario = !empty($_SESSION["usuario"]) ? "Olá, ".$_SESSION["usuario"]["nome"]." <a href='logout.php' class='text-light font-weight-bold ms-2'>Sair</a>" : "Visitante <a href='login.php' class='text-light font-weight-bold ms-2'>Entrar</a>";
 
 ?>
 <!doctype html>

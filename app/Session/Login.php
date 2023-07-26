@@ -64,4 +64,18 @@ class Login{
         }
     }
 
+    /**
+     * Método responsável por fazer logout do usuáriovoid
+     */
+    public static function logout(){
+        // INICIA A SESSION
+        self::init();
+
+        // DELETA A SESSION USUÁRIO
+        unset($_SESSION["usuario"]);
+
+        // REDIRECIONA PARA TELA DE LOGIN
+        echo "<script>location.href='login.php'</script>";
+    }
+
 }
