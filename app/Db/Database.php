@@ -17,7 +17,7 @@ class Database{
      * Nome do banco de dados
      * @var string
      */
-    const NAME = 'codx_vagas';
+    const NAME = 'seu_banco';
 
     /**
      * Usuário do banco
