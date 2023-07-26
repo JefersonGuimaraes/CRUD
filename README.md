@@ -44,6 +44,6 @@ CREATE TABLE `vagas` (
 Acesse o arquivo ```./app/Db/Database.php``` e altere as credenciais de acordo com o seu ambiente (HOST, NAME, USER, e PASS).
 
 Para o projeto funcionar, é preciso executar o composer para criar os arquivos de autoload das classes.
-Para isso, basta acessar a pasta raíz do projeto pelo terminal e executar o comando: <br>
-```composer install``` <br>
-Depois de finalizadas as instalações, uma pasta chamada vender será criada no seu projeto e você poderá acessá-lo pelo navegador.
+Para isso, basta acessar a pasta raíz do projeto pelo terminal e executar o comando: <br><br>
+```composer install``` <br><br>
+Depois de finalizadas as instalações, uma pasta chamada ```vendor``` será criada no seu projeto e você poderá acessá-lo pelo navegador.
